@@ -93,16 +93,16 @@
 
 
 
-<meta name="description" content="使用 golang 开发微信小程序安装 golang123456789wget https://redirector.gvt1.com/edgedl/go/go1.9.2.linux-amd64.tar.gztar zxvf go1.9.2.linux-amd64.tar.gzmv go /usr/local/govi ~/.bashrcexport $PATH=$PATH:/usr/local/">
+<meta name="description" content="SQLite 包括以下五个时间函数： date(日期时间字符串, 修正符, 修正符, ……)  函数返回一个以 “YYYY-MM-DD” 为格式的日期； time(日期时间字符串, 修正符, 修正符, ……)  time() 函数返回一个以 “YYYY-MM-DD HH:MM:SS” 为格式的日期时间； datetime(日期时间字符串, 修正符, 修正符, ……)  julianday(日期时间">
 <meta property="og:type" content="article">
-<meta property="og:title" content="golang 开发小程序 api">
-<meta property="og:url" content="http://yoursite.com/2017/11/14/golang-开发小程序-api/index.html">
+<meta property="og:title" content="sqlite3 时间函数">
+<meta property="og:url" content="http://yoursite.com/2017/11/24/sqlite3-时间函数/index.html">
 <meta property="og:site_name" content="3OGX">
-<meta property="og:description" content="使用 golang 开发微信小程序安装 golang123456789wget https://redirector.gvt1.com/edgedl/go/go1.9.2.linux-amd64.tar.gztar zxvf go1.9.2.linux-amd64.tar.gzmv go /usr/local/govi ~/.bashrcexport $PATH=$PATH:/usr/local/">
-<meta property="og:updated_time" content="2017-11-14T07:55:09.000Z">
+<meta property="og:description" content="SQLite 包括以下五个时间函数： date(日期时间字符串, 修正符, 修正符, ……)  函数返回一个以 “YYYY-MM-DD” 为格式的日期； time(日期时间字符串, 修正符, 修正符, ……)  time() 函数返回一个以 “YYYY-MM-DD HH:MM:SS” 为格式的日期时间； datetime(日期时间字符串, 修正符, 修正符, ……)  julianday(日期时间">
+<meta property="og:updated_time" content="2017-11-24T05:52:35.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="golang 开发小程序 api">
-<meta name="twitter:description" content="使用 golang 开发微信小程序安装 golang123456789wget https://redirector.gvt1.com/edgedl/go/go1.9.2.linux-amd64.tar.gztar zxvf go1.9.2.linux-amd64.tar.gzmv go /usr/local/govi ~/.bashrcexport $PATH=$PATH:/usr/local/">
+<meta name="twitter:title" content="sqlite3 时间函数">
+<meta name="twitter:description" content="SQLite 包括以下五个时间函数： date(日期时间字符串, 修正符, 修正符, ……)  函数返回一个以 “YYYY-MM-DD” 为格式的日期； time(日期时间字符串, 修正符, 修正符, ……)  time() 函数返回一个以 “YYYY-MM-DD HH:MM:SS” 为格式的日期时间； datetime(日期时间字符串, 修正符, 修正符, ……)  julianday(日期时间">
 
 
 
@@ -130,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/11/14/golang-开发小程序-api/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/11/24/sqlite3-时间函数/"/>
 
 
 
 
 
-  <title>golang 开发小程序 api | 3OGX</title>
+  <title>sqlite3 时间函数 | 3OGX</title>
   
 
 
@@ -255,7 +255,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/14/golang-开发小程序-api/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/24/sqlite3-时间函数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="beiwei">
@@ -272,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">golang 开发小程序 api</h1>
+          <h1 class="post-title" itemprop="name headline">sqlite3 时间函数</h1>
         
 
         <div class="post-meta">
@@ -284,8 +284,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-14T11:13:42+08:00">
-                2017-11-14
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-24T13:46:44+08:00">
+                2017-11-24
               </time>
             
 
@@ -319,11 +319,25 @@
       
 
       
-        <h2 id="使用-golang-开发微信小程序"><a href="#使用-golang-开发微信小程序" class="headerlink" title="使用 golang 开发微信小程序"></a>使用 golang 开发微信小程序</h2><h2 id="安装-golang"><a href="#安装-golang" class="headerlink" title="安装 golang"></a>安装 golang</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">wget https://redirector.gvt1.com/edgedl/go/go1.9.2.linux-amd64.tar.gz</div><div class="line"></div><div class="line">tar zxvf go1.9.2.linux-amd64.tar.gz</div><div class="line"></div><div class="line">mv go /usr/local/go</div><div class="line"></div><div class="line">vi ~/.bashrc</div><div class="line">export $PATH=$PATH:/usr/local/go/bin</div></pre></td></tr></table></figure>
-<p>测试一下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">go</div></pre></td></tr></table></figure></p>
-<h2 id="安装所需的-plugin"><a href="#安装所需的-plugin" class="headerlink" title="安装所需的 plugin"></a>安装所需的 plugin</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">go get github.com/gin-gonic/gin</div><div class="line">go get github.com/Luxurioust/excelize</div><div class="line">go get github.com/mattn/go-sqlite3</div><div class="line">go get gopkg.in/yaml.v2</div><div class="line">go get github.com/mattn/go-isatty</div></pre></td></tr></table></figure>
-<h2 id="申请-ssl"><a href="#申请-ssl" class="headerlink" title="申请 ssl"></a>申请 ssl</h2><h2 id="配置-nginx"><a href="#配置-nginx" class="headerlink" title="配置 nginx"></a>配置 nginx</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">    listen 443;</div><div class="line">    server_name api.huangheruhailiu.com;</div><div class="line">    ssl on;</div><div class="line">    ssl_certificate 1_api.huangheruhailiu.com_bundle.crt;</div><div class="line">    ssl_certificate_key 2_api.huangheruhailiu.com.key;</div><div class="line">    ssl_session_timeout 5m;</div><div class="line">    ssl_protocols TLSv1 TLSv1.1 TLSv1.2; </div><div class="line">    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;</div><div class="line">    ssl_prefer_server_ciphers on;</div><div class="line">    location / &#123;</div><div class="line">		proxy_pass http://127.0.0.1:8002;</div><div class="line">		proxy_set_header Host $host:80;</div><div class="line">		proxy_set_header X-Real-IP $remote_addr;</div><div class="line">		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
+        <h2 id="SQLite-包括以下五个时间函数："><a href="#SQLite-包括以下五个时间函数：" class="headerlink" title="SQLite 包括以下五个时间函数："></a>SQLite 包括以下五个时间函数：</h2><ul>
+<li>date(日期时间字符串, 修正符, 修正符, ……)<br>  函数返回一个以 “YYYY-MM-DD” 为格式的日期；</li>
+<li>time(日期时间字符串, 修正符, 修正符, ……)<br>  time() 函数返回一个以 “YYYY-MM-DD HH:MM:SS” 为格式的日期时间；</li>
+<li><p>datetime(日期时间字符串, 修正符, 修正符, ……)</p>
+</li>
+<li><p>julianday(日期时间字符串, 修正符, 修正符, ……)<br>  julianday() 函数返回一个天数，从格林威治时间公元前4714年11月24号开始算起；</p>
+</li>
+<li>strftime(日期时间格式, 日期时间字符串, 修正符, 修正符, ……)<br>  strftime() 函数返回一个经过格式话的日期时间，它可以用下面的符号对日期和时间进行格式化：<br>  %d  一月中的第几天 01-31<br>  %f  小数形式的秒，SS.SSSS<br>  %H  小时 00-24<br>  %j  一年中的第几天 01-366<br>  %J  Julian Day Numbers<br>  %m  月份 01-12<br>  %M  分钟 00-59<br>  %s  从 1970-01-01日开始计算的秒数<br>  %S  秒 00-59<br>  %w  星期，0-6，0是星期天<br>  %W  一年中的第几周 00-53<br>  %Y  年份 0000-9999<br>  %%  % 百分号</li>
+</ul>
+<h2 id="举一些例子"><a href="#举一些例子" class="headerlink" title="举一些例子"></a>举一些例子</h2><pre><code>* 计算机当前时间 `SELECT date(‘now’)`
+* 计算机当前月份的最后一天 `SELECT date(‘now’,’start of month’,’+1 month’,’-1 day’)`
+* 计算UNIX 时间戳1092941466表示的日期和时间 `SELECT datetime(‘1092941466’,’unixepoch’)`
+* 计算 UNIX 时间戳1092941466 表示的本地日期和时间 
+    `SELECT datetime(‘1092941466’,’unixepoch’,’localtime’)  -&gt;  SELECT strftime(&quot;%Y年-%m月-%d日 %H时:%M时:%S秒&quot;,date/1000,&apos;unixepoch&apos;,&apos;localtime&apos;) FROM calls;`
+* 计算机当前UNIX 时间戳 `SELECT strftime(‘%s’,’now’)`
+* 两个日期之间相差多少天 `SELECT jolianday(‘now’)-jolianday(‘1981-12-23’)`
+* 两个日期时间之间相差多少秒 `SELECT julianday(&apos;now&apos;)*86400 - julianday(&apos;2004-01-01 02:34:56&apos;)*86400`
+* 计算今年十月份第一个星期二的日期 `SELECT date(&apos;now&apos;,&apos;start of year&apos;,&apos;+9 months&apos;,&apos;weekday 2&apos;); `
+</code></pre>
       
     </div>
 
@@ -359,8 +373,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/20/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2017/11/24/魑的发音/" rel="next" title="魑的发音">
+                <i class="fa fa-chevron-left"></i> 魑的发音
               </a>
             
           </div>
@@ -368,10 +382,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/16/tcpdump-抓取局域网内指定-ip-数据/" rel="prev" title="mac 下 用 tcpdump 通过 RVI 抓取 iPhone 数据包">
-                mac 下 用 tcpdump 通过 RVI 抓取 iPhone 数据包 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -482,7 +492,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-golang-开发微信小程序"><span class="nav-number">1.</span> <span class="nav-text">使用 golang 开发微信小程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-golang"><span class="nav-number">2.</span> <span class="nav-text">安装 golang</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装所需的-plugin"><span class="nav-number">3.</span> <span class="nav-text">安装所需的 plugin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#申请-ssl"><span class="nav-number">4.</span> <span class="nav-text">申请 ssl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置-nginx"><span class="nav-number">5.</span> <span class="nav-text">配置 nginx</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SQLite-包括以下五个时间函数："><span class="nav-number">1.</span> <span class="nav-text">SQLite 包括以下五个时间函数：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#举一些例子"><span class="nav-number">2.</span> <span class="nav-text">举一些例子</span></a></li></ol></div>
             
 
           </div>

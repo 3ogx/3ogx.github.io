@@ -94,11 +94,11 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="3OGX">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="3OGX">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="3OGX">
 
 
 
@@ -132,7 +132,7 @@
 
 
 
-  <title>Hexo</title>
+  <title>3OGX</title>
   
 
 
@@ -170,12 +170,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">3OGX</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <p class="site-subtitle">生活就该逢山开路遇水架桥。</p>
       
   </div>
 
@@ -253,16 +253,145 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/24/魑的发音/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/24/sqlite3-时间函数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="name" content="beiwei">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="3OGX">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/24/sqlite3-时间函数/" itemprop="url">sqlite3 时间函数</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-24T13:46:44+08:00">
+                2017-11-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="SQLite-包括以下五个时间函数："><a href="#SQLite-包括以下五个时间函数：" class="headerlink" title="SQLite 包括以下五个时间函数："></a>SQLite 包括以下五个时间函数：</h2><ul>
+<li>date(日期时间字符串, 修正符, 修正符, ……)<br>  函数返回一个以 “YYYY-MM-DD” 为格式的日期；</li>
+<li>time(日期时间字符串, 修正符, 修正符, ……)<br>  time() 函数返回一个以 “YYYY-MM-DD HH:MM:SS” 为格式的日期时间；</li>
+<li><p>datetime(日期时间字符串, 修正符, 修正符, ……)</p>
+</li>
+<li><p>julianday(日期时间字符串, 修正符, 修正符, ……)<br>  julianday() 函数返回一个天数，从格林威治时间公元前4714年11月24号开始算起；</p>
+</li>
+<li>strftime(日期时间格式, 日期时间字符串, 修正符, 修正符, ……)<br>  strftime() 函数返回一个经过格式话的日期时间，它可以用下面的符号对日期和时间进行格式化：<br>  %d  一月中的第几天 01-31<br>  %f  小数形式的秒，SS.SSSS<br>  %H  小时 00-24<br>  %j  一年中的第几天 01-366<br>  %J  Julian Day Numbers<br>  %m  月份 01-12<br>  %M  分钟 00-59<br>  %s  从 1970-01-01日开始计算的秒数<br>  %S  秒 00-59<br>  %w  星期，0-6，0是星期天<br>  %W  一年中的第几周 00-53<br>  %Y  年份 0000-9999<br>  %%  % 百分号</li>
+</ul>
+<h2 id="举一些例子"><a href="#举一些例子" class="headerlink" title="举一些例子"></a>举一些例子</h2><pre><code>* 计算机当前时间 `SELECT date(‘now’)`
+* 计算机当前月份的最后一天 `SELECT date(‘now’,’start of month’,’+1 month’,’-1 day’)`
+* 计算UNIX 时间戳1092941466表示的日期和时间 `SELECT datetime(‘1092941466’,’unixepoch’)`
+* 计算 UNIX 时间戳1092941466 表示的本地日期和时间 
+    `SELECT datetime(‘1092941466’,’unixepoch’,’localtime’)  -&gt;  SELECT strftime(&quot;%Y年-%m月-%d日 %H时:%M时:%S秒&quot;,date/1000,&apos;unixepoch&apos;,&apos;localtime&apos;) FROM calls;`
+* 计算机当前UNIX 时间戳 `SELECT strftime(‘%s’,’now’)`
+* 两个日期之间相差多少天 `SELECT jolianday(‘now’)-jolianday(‘1981-12-23’)`
+* 两个日期时间之间相差多少秒 `SELECT julianday(&apos;now&apos;)*86400 - julianday(&apos;2004-01-01 02:34:56&apos;)*86400`
+* 计算今年十月份第一个星期二的日期 `SELECT date(&apos;now&apos;,&apos;start of year&apos;,&apos;+9 months&apos;,&apos;weekday 2&apos;); `
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/24/魑的发音/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="beiwei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="3OGX">
     </span>
 
     
@@ -368,13 +497,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/20/Linux-关闭端口方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="name" content="beiwei">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="3OGX">
     </span>
 
     
@@ -485,13 +614,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/16/tcpdump-抓取局域网内指定-ip-数据/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="name" content="beiwei">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="3OGX">
     </span>
 
     
@@ -608,13 +737,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/14/golang-开发小程序-api/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="name" content="beiwei">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="3OGX">
     </span>
 
     
@@ -723,13 +852,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/20/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="name" content="beiwei">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="3OGX">
     </span>
 
     
@@ -865,8 +994,8 @@
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
-               alt="John Doe" />
-          <p class="site-author-name" itemprop="name">John Doe</p>
+               alt="beiwei" />
+          <p class="site-author-name" itemprop="name">beiwei</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
           
@@ -876,7 +1005,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
@@ -926,7 +1055,7 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">beiwei</span>
 </div>
 
 
